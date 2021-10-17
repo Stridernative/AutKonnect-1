@@ -1,0 +1,15 @@
+<h1> All the Events </h1>
+
+<%= form_tag("/events", method: "get") do %>
+    <%= label_tag(:q, "Search By Name:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+<% @events.each do |e| %>
+
+    <h2><%= e.name%> - <%= e.business.name %> </h2>
+    <%= link_to "Write a review", new_event_review_path(e.id) %>
+    <div> 
+    <p><%= e.description %></p>
+    </div>
+    <% end %>

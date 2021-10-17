@@ -1,0 +1,13 @@
+<h1> Businesses </h1>
+
+<%= form_tag("/businesses", method: "get") do %>
+    <%= label_tag(:q, "Search by Business:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+<ol>
+<% @businesses.each do |business| %>
+    <li><%= business.name%></li>
+    <% end %>
+</ol>

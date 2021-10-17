@@ -1,0 +1,26 @@
+<%=  display_header(@review)%>
+<%= render partial: 'layouts/errors', locals: {object: @review}  %>
+<%= form_for(@review) do |f| %>
+  <% if params[:event_id] %>
+  <%= f.hidden_field :event_id %>
+  <% else %>
+    <div>
+    <%= f.label :event_id, "Please choose an event" %>
+    <%= f.collection_select :event_id, Event.alpha, :id, :name, include_blank: true %>
+  </div>
+<% end %>
+<div>
+    <%= f.label :stars %>
+    <%= f.number_field :stars, min: 0, max: 5 %>
+  </div>
+  <br>
+  <br>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  <br>
+  
+
+  <%= f.submit %>
+    <% end %>
