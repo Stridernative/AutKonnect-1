@@ -3,6 +3,12 @@ class SessionsController < ApplicationController
     def welcome
     end
 
+    def about
+    end
+
+    def shop 
+    end
+    
     def destroy
         session.delete(:user_id)
         redirect_to '/'
