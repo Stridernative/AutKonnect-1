@@ -1,5 +1,6 @@
 <%=  display_header(@review)%>
 <%= render partial: 'layouts/errors', locals: {object: @review}  %>
+
 <%= form_for(@review) do |f| %>
   <% if params[:event_id] %>
   <%= f.hidden_field :event_id %>
@@ -9,7 +10,7 @@
     <%= f.collection_select :event_id, Event.alpha, :id, :name, include_blank: true %>
   </div>
 <% end %>
-<div>
+  <div>
     <%= f.label :stars %>
     <%= f.number_field :stars, min: 0, max: 5 %>
   </div>
@@ -20,7 +21,7 @@
     <%= f.text_area :content %>
   </div>
   <br>
-  
 
   <%= f.submit %>
     <% end %>
+   

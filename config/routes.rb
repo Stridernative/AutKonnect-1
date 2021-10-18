@@ -15,6 +15,12 @@
     resources :reviews, only: [:new, :index]
   end
 
+
+  resources :rsvps
+  resources :events do
+    resources :rsvps, only: [:new, :index]
+  end
+
   resources :businesses
   resources :users, only: [:show]
 
