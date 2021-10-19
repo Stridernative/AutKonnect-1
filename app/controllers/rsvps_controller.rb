@@ -1,9 +1,9 @@
-class ReviewsController < ApplicationController
+class RsvpsController < ApplicationController
   before_action :redirect_if_not_logged_in
   
   def new
       if @event = Event.find_by_id(params[:event_id])
-      @rsvp = @event.rsvps.build
+      @event = @event.rsvps.build
       else
           @rsvp = Rsvp.new
       end

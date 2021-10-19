@@ -9,5 +9,6 @@
 <ol>
 <% @businesses.each do |business| %>
     <li><%= business.name%></li>
+    <%= link_to "Learn More", business_path(business.id) %>
     <% end %>
 </ol>

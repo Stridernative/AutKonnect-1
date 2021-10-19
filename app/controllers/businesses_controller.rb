@@ -8,4 +8,15 @@ class BusinessesController < ApplicationController
         @businesses = Business.all
        end
     end
+
+    def show
+        @business = Business.find_by_id(params[:id])
+    end
+
+private 
+
+    def business_params
+        params.require(:business).permit(:name, :id)
+    end
 end
+
