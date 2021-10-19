@@ -1,11 +1,15 @@
-<h1> Businesses </h1>
-
 <%= form_tag("/businesses", method: "get") do %>
-    <%= label_tag(:q, "Search by Business:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
+  <div class="flex border-grey-light border">
+  <input class="w-full rounded ml-1" type="text" placeholder="Search for a business by name..." <%= text_field_tag(:q) %>
+  <button class="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest"   <%= submit_tag("Search") %>
+  <span class="w-auto flex justify-end items-center text-grey p-2 hover:text-grey-darkest">
+      <i class="material-icons text-xs">search</i>
   <% end %>
+  </span>
+  </button>
+</div>
 
+<br></br>
 <% @businesses.each do |business| %>
 <div class="py-5 px-8 bg-pink-200">
 <div class="text-center">
