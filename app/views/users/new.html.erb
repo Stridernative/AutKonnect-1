@@ -2,16 +2,20 @@
 
 <%= render partial: 'layouts/errors', locals: {object: @user}  %>
 
+
 <%= form_for(@user) do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>
-    
+
     <%= f.label :password %>
     <%= f.password_field :password %>
 
-    <%= f.submit "Sign up" %>
-    <% end %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
 
+    <%= f.submit "Sign up" %>
+
+    <% end %>
         <div class="py-5 px-8 bg-pink-200">
         <div class="text-center">
           <header class="rounded-t-lg font-bold text-2xl py-5 px-8">Sign up as a member</header>

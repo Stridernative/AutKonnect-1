@@ -1,16 +1,32 @@
-<h1> All the Events </h1>
-
 <%= form_tag("/events", method: "get") do %>
-    <%= label_tag(:q, "Search By Name:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
+  <div class="flex border-grey-light border">
+  <input class="w-full rounded ml-1" type="text" placeholder="Search for an event by name..." <%= text_field_tag(:q) %>
+  <button class="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest"   <%= submit_tag("Search") %>
+  <span class="w-auto flex justify-end items-center text-grey p-2 hover:text-grey-darkest">
+      <i class="material-icons text-xs">search</i>
   <% end %>
-<% @events.each do |e| %>
-
-    <h2><%= e.name%> - <%= e.business.name %> </h2>
-    <%= link_to "Write a review", new_event_review_path(e.id) %>
-    <div> 
-    <%= link_to "RSVP", new_event_rsvp_path(e.id) %>
-    <p><%= e.description %></p>
+  </span>
+  </button>
+</div>
+<br></br>
+<% @events.each do |event| %>
+  <div class="py-5 px-8 bg-pink-200">
+  <div class="text-center">
+    <header class="rounded-t-lg font-bold text-2xl py-5 px-8"><%= event.name%> - <%= event.business.name %></header>
+  </div>
+    <div class="text-center">
+    <content> <%= event.description %></content>
+    <footer>
+      <button class="mt-4 rounded-lg px-4 py-2 bg-blue-200 text-black shadow hover:shadow-xl duration-300">
+      <%= link_to "RSVP", new_event_rsvp_path(event.id) %>
+      </button>
+      </footer>
     </div>
     <% end %>
+  </div>
+  </div>
+
+
+
+  
+    
