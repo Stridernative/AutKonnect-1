@@ -1,8 +1,19 @@
 <header class="py-10 bg-blue-200 text-black text-5xl font-caveat text-center"> Reviews </header>
 <br></br>
 
-<ul>
 <% @reviews.each do |r| %>
-<li><%= r.event.name%>: <%= r.content%> - <%= r.stars%> <%='stars'%></li>
-<% end %>
-</ul>
+    <div class="py-5 px-8 bg-pink-200">
+    <div class="text-center">
+      <header class="rounded-t-lg font-bold text-2xl py-5 px-8"><%= r.event.name%> - <%= r.stars%> <%='stars'%></header>
+    </div>
+      <div class="text-center">
+      <content class="rounded-t-lg font-bold text-1xl py-5 px-8"><%= r.content%></content>
+      </div>
+     <div class="text-center">
+  <button class="mt-4 rounded-lg px-4 py-2 bg-blue-200 text-black shadow hover:shadow-xl duration-300">
+    <%= link_to r.event.business.name, business_path(r.event.business.id) %>
+    </button>
+    </div>
+      <% end %>
+    </div>
+    </div>
