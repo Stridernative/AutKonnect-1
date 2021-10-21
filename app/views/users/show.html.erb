@@ -1,11 +1,18 @@
-<header class="py-10 bg-blue-200 text-black text-5xl font-caveat text-center"> Hi <%= @user.username %>! </header>
+<header class="py-10 bg-blue-200 text-black text-5xl font-caveat text-center"> <%= @user.username %> </header>
 <br></br>
 
-<header class="py-7 bg-blue-200 text-black text-3xl font-caveat text-center"> Your Reviews</header>
+<header class="py-7 bg-pink-200 text-black text-3xl font-caveat text-center"> <%= @user.username %>'s Reviews</header>
+
 <ul>
 <% @user.reviewed_events.each do |e| %>
-<li> <%= link_to e.name_and_business, event_path(e)%> </li>
+<li> 
+<button class="mt-4 rounded-lg px-4 py-2 bg-blue-200 text-black shadow hover:shadow-xl duration-300">
+<%= link_to link_to e.name_and_business, event_path(e) %>
+</button>
+ </li>
 <% end %>
 </ul>
+
+
 <br><br>
-<header class="py-7 bg-blue-200 text-black text-3xl font-caveat text-center"> Your RSVPs</header>
+<header class="py-7 bg-pink-200 text-black text-3xl font-caveat text-center"> <%= @user.username %>'s RSVPs</header>

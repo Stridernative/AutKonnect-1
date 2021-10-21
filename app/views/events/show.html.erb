@@ -11,6 +11,12 @@
 
 <br></br>
 
+
+<button class="mt-4 rounded-lg px-4 py-2 bg-blue-200 text-black shadow hover:shadow-xl duration-300">
 <%= link_to "See All Reviews for #{@event.name}", event_reviews_path(@event) %>
+</button>
+
+<button class="mt-4 rounded-lg px-4 py-2 bg-blue-200 text-black shadow hover:shadow-xl duration-300">
 
 <%= link_to "See who is attending #{@event.name}", event_rsvps_path(@event) %>
+</button>

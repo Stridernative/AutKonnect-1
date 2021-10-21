@@ -1,3 +1,18 @@
+<header class="py-10 bg-blue-200 text-black text-5xl font-caveat text-center"> RSVPs </header>
+<br></br>
+
 <% @rsvps.each do |r| %>
-<li><%= r.user_id %>: <%= r.event_id%> </li>
-<% end %>
+  <div class="py-5 px-8 bg-pink-200">
+    <div class="text-center">
+      <header class="rounded-t-lg font-bold text-2xl py-5 px-8"><%= r.user.username%> is attending <%=r.event.business.name%>'s <%= r.event.name%></header>
+     <div class="text-center">
+  <button class="mt-4 rounded-lg px-4 py-2 bg-blue-200 text-black shadow hover:shadow-xl duration-300">
+    <%= link_to r.event.business.name, business_path(r.event.business.id) %>
+    </button>
+    <button class="mt-4 rounded-lg px-4 py-2 bg-blue-200 text-black shadow hover:shadow-xl duration-300">
+    <%= link_to r.event.user.username, user_path(r.event.user.id) %>
+    </button>
+    </div>
+      <% end %>
+      </div>
+      </div>
