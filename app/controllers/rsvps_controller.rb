@@ -25,7 +25,7 @@ class RsvpsController < ApplicationController
 
   def index
       if @event = Event.find_by_id(params[:event_id])
-          @events = @event.rsvps
+          @rsvps = @event.rsvps
       else
       @rsvps = Rsvp.all
   end

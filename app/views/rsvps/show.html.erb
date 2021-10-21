@@ -1,2 +1,6 @@
 
 <p>Thanks, <%= @rsvp.user.username%>! You have successfully RSVP'd to <%= @rsvp.event.name%>.</p> 
+
+<button class="mt-4 rounded-lg px-4 py-2 bg-blue-200 text-black shadow hover:shadow-xl duration-300">
+<%= link_to "See who else is going", event_rsvps_path(@rsvp.event.id) %>
+</button>

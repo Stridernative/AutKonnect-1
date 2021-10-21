@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
 
     def index
         if @event = Event.find_by_id(params[:event_id])
-            @events = @event.reviews
+            @reviews = @event.reviews
         else
         @reviews = Review.all
     end
@@ -33,6 +33,6 @@ end
     private
 
     def review_params
-        params.require(:review). permit(:event_id, :content, :stars)
+        params.require(:review). permit(:event_id, :content, :stars, :title)
     end
 end
