@@ -29,4 +29,9 @@
 
   resources :users
 
+  resources :conversations do
+    resources :messages
+   end
+   #change this route, it is wrong
+
     end

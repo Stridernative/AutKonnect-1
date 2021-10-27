@@ -8,6 +8,8 @@ class User < ApplicationRecord
     validates :username, uniqueness: true, presence: true
     validates :email, presence: true
 
+    has_many :conversations, :foreign_key => :sender_id
+
     has_secure_password
 
 
